@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd158d3-f017-42b6-8a9d-ed4abc6d094a" name="Changes" comment="added screens">
+    <list default="true" id="1cd158d3-f017-42b6-8a9d-ed4abc6d094a" name="Changes" comment="all scenes done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rucafe/Coffee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rucafe/Donut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rucafe/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/rucafe/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/basket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/basket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/coffee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/coffee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/donut.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/rucafe/donut.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680448697771</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="all scenes done">
+      <created>1680472682809</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680472682809</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +110,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="added screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="added screens" />
+    <MESSAGE value="all scenes done" />
+    <option name="LAST_COMMIT_MESSAGE" value="all scenes done" />
   </component>
 </project>
