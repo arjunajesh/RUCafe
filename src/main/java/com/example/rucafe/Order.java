@@ -1,6 +1,17 @@
 package com.example.rucafe;
+import javafx.scene.control.Menu;
+
+import java.util.ArrayList;
 
 public class Order {
-    private int orderNumber;
-    private MenuItem[] orderItems = new MenuItem[5]; /* Make this array list?? */
+    private static int orderNumber = 0;
+    private ArrayList<MenuItem> orderItems = new ArrayList<>();
+
+    public Order(){
+        orderNumber += 1;
+    }
+
+    public void addMenuItem(MenuItem item){
+        orderItems.add(item);
+    }
 }

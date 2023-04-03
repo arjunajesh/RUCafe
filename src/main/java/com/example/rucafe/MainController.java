@@ -13,6 +13,9 @@ public class MainController {
     @FXML
     private Label welcomeText;
 
+    public void initialize(){
+
+    }
     @FXML
     protected void displayDonutsScreen() {
         Stage donutScene = new Stage();
