@@ -47,8 +47,8 @@
                   <CheckBox mnemonicParsing="false" text="Irish Cream" GridPane.rowIndex="2" />
                   <CheckBox mnemonicParsing="false" text="Mocha" GridPane.columnIndex="1" />
                   <CheckBox mnemonicParsing="false" text="Caramel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="2" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ComboBox fx:id = "coffeeBox" prefWidth="150.0" GridPane.columnIndex="2" />
+                  <ComboBox fx:id = "numCoffeeBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
             </GridPane>
