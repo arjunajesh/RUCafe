@@ -23,12 +23,73 @@ public class MainController {
             Scene scene = new Scene(root, 500,400);
             donutScene.setScene(scene);
             donutScene.show();
-            //DonutController donutController = loader.getController();
-            //donutController.setMainController(this);
         }
         catch(IOException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Loading donut.fxml.");
+            alert.setContentText("Couldn't load donut.fxml.");
+            alert.showAndWait();
 
         }
 
     }
+    @FXML
+    protected void displayCoffeeScreen(){
+        Stage coffeeScene = new Stage();
+        BorderPane root;
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("coffee.fxml"));
+            root = (BorderPane) loader.load();
+            Scene scene = new Scene(root, 500, 400);
+            coffeeScene.setScene(scene);
+            coffeeScene.show();
+        }
+        catch(IOException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Loading coffee.fxml.");
+            alert.setContentText("Couldn't load coffee.fxml.");
+            alert.showAndWait();
+        }
+    }
+    @FXML
+    protected void displayBasketScreen(){
+        Stage basketScene = new Stage();
+        BorderPane root;
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("basket.fxml"));
+            root = (BorderPane) loader.load();
+            Scene scene = new Scene(root, 500, 400);
+            basketScene.setScene(scene);
+            basketScene.show();
+        }
+        catch(IOException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Loading basket.fxml.");
+            alert.setContentText("Couldn't load basket.fxml.");
+            alert.showAndWait();
+        }
+    }
+    @FXML
+    protected void displayOrderScreen(){
+        Stage ordersScene = new Stage();
+        BorderPane root;
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("orders.fxml"));
+            root = (BorderPane) loader.load();
+            Scene scene = new Scene(root, 500, 400);
+            ordersScene.setScene(scene);
+            ordersScene.show();
+        }
+        catch(IOException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Loading orders.fxml.");
+            alert.setContentText("Couldn't load orders.fxml.");
+            alert.showAndWait();
+        }
+    }
+
 }
