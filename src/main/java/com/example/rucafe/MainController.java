@@ -23,7 +23,7 @@ public class MainController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("donut.fxml"));
             root = (BorderPane) loader.load();
-            Scene scene = new Scene(root, 500,400);
+            Scene scene = new Scene(root, 450, 600);
             donutScene.setScene(scene);
             donutScene.show();
         }
@@ -44,7 +44,7 @@ public class MainController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("coffee.fxml"));
             root = (BorderPane) loader.load();
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 450, 600);
             coffeeScene.setScene(scene);
             coffeeScene.show();
         }
@@ -63,7 +63,7 @@ public class MainController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("basket.fxml"));
             root = (BorderPane) loader.load();
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 450, 600);
             basketScene.setScene(scene);
             basketScene.show();
         }
@@ -82,7 +82,7 @@ public class MainController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("orders.fxml"));
             root = (BorderPane) loader.load();
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 450, 600);
             ordersScene.setScene(scene);
             ordersScene.show();
         }

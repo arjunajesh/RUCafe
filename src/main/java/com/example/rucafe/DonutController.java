@@ -9,10 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class DonutController {
-
+    DecimalFormat df = new DecimalFormat("#.##");
     private ObservableList<String> donutsList;
     private ObservableList<String> numbersList;
     private ObservableList<String> yeastFlavors;
@@ -101,6 +102,16 @@ public class DonutController {
         for(Donut donut : donuts){
             total += donut.calculatePrice();
         }
-        subTotal.setText("$" + String.valueOf(total));
+        subTotal.setText("$" + df.format(total));
+    }
+
+    public void addDonutsToOrder(ActionEvent e){
+        for(Donut donut: donuts)
+        {
+            order.addMenuItem(donut);
+        }
+        donuts.clear();
+        updateDonutList();
+        subTotal.clear();
     }
 }

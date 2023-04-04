@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rucafe.OrdersController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rucafe.OrdersController">
    <top>
       <Label text="Store Orders" BorderPane.alignment="CENTER">
          <font>
@@ -20,11 +15,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox layoutX="55.0" layoutY="50.0" prefWidth="150.0" />
+            <ComboBox fx:id="orderBox" layoutX="55.0" layoutY="50.0" onAction="#changeSelectedOrder" prefWidth="150.0" />
             <Label layoutX="248.0" layoutY="50.0" text="Total Amount" />
-            <TextField layoutX="332.0" layoutY="46.0" prefHeight="26.0" prefWidth="119.0" />
-            <ListView layoutX="57.0" layoutY="96.0" prefHeight="200.0" prefWidth="400.0" />
-            <Button layoutX="90.0" layoutY="331.0" mnemonicParsing="false" text="Cancel Order" />
+            <TextField fx:id="totalAmount" layoutX="332.0" layoutY="46.0" prefHeight="26.0" prefWidth="119.0" />
+            <ListView fx:id="orderItems" layoutX="57.0" layoutY="96.0" prefHeight="200.0" prefWidth="400.0" />
+            <Button layoutX="90.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order" />
             <Button layoutX="221.0" layoutY="332.0" mnemonicParsing="false" text="Export Orders" />
          </children>
       </AnchorPane>
