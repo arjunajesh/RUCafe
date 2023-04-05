@@ -9,6 +9,10 @@ import javafx.collections.ObservableList;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/**
+ * Class for DonutController Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class DonutController {
     DecimalFormat df = new DecimalFormat("#.##");
     private ObservableList<String> donutsList;
@@ -35,6 +39,9 @@ public class DonutController {
     @FXML
     private TextField subTotal;
 
+    /**
+     * Configures the starting layout of the screen
+     */
     public void initialize(){
         donutsList = FXCollections.observableArrayList("Yeast", "Cake", "Donut Holes");
         numbersList = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10","11","12");
@@ -55,6 +62,10 @@ public class DonutController {
         donuts = new ArrayList<>();
     }
 
+    /**
+     * Receives the type of donut the user chooses and updates flavorList accordingly
+     * @param e allows access to properties of ActionEvent
+     */
     public void donutSelection(ActionEvent e){
         switch(donutBox.getSelectionModel().getSelectedItem()){
             case "Yeast":
@@ -67,6 +78,11 @@ public class DonutController {
         }
     }
 
+    /**
+     * Adds type and number of donuts the user selects into donut arrayList
+     * Updates the donut order display and shown subtotal accordingly
+     * @param e allows access to properties of ActionEvent
+     */
     public void addDonut(ActionEvent e){
         if(flavorList.getSelectionModel().getSelectedIndex() == -1){
             throwAlert();
@@ -86,6 +102,10 @@ public class DonutController {
         updateSubTotal();
     }
 
+    /**
+     * Removes the selected donut order from the donuts arrayList
+     * Then updates the donut orders display and shown subtotal accordingly
+     */
     public void removeDonut(){
         int index = donutDisplay.getSelectionModel().getSelectedIndex();
         donuts.remove(index);
@@ -94,10 +114,16 @@ public class DonutController {
 
     }
 
+    /**
+     * Shows the most updated list of ordered donuts on the donuts arrayList
+     */
     public void updateDonutList(){
         donutDisplay.setItems(FXCollections.observableArrayList(donuts));
     }
 
+    /**
+     * Calculates and updates the subtotal of the order to the correct amount
+     */
     public void updateSubTotal(){
         double total = 0;
         for(Donut donut : donuts){
@@ -106,6 +132,12 @@ public class DonutController {
         subTotal.setText("$" + df.format(total));
     }
 
+    /**
+     * Adds all donut orders to the order
+     * Clears the list of donut orders
+     * Clears the previous subtotal
+     * @param e allows access to properties of ActionEvent
+     */
     public void addDonutsToOrder(ActionEvent e){
         for(Donut donut: donuts)
         {
@@ -116,6 +148,9 @@ public class DonutController {
         subTotal.clear();
     }
 
+    /**
+     * Shows user an error if a required choice is not specified when adding/removing an item
+     */
     public void throwAlert(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");
