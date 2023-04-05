@@ -8,6 +8,8 @@ public class Order {
     private static int orderNumber = 0;
     private ArrayList<MenuItem> orderItems = new ArrayList<>();
 
+    private static final double TAX = 0.06625;
+
     public Order(){
         orderNumber += 1;
     }
@@ -30,7 +32,7 @@ public class Order {
     }
     public double getTax(){
         double subTotal = getSubTotal();
-        return subTotal * 0.06625; /* MAGIC NUMBER*/
+        return subTotal * TAX;
     }
 
     public double getTotalAmount(){
