@@ -1,5 +1,9 @@
 package com.example.rucafe;
 
+/**
+ * Class for Coffee Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class Coffee extends MenuItem{
     private String size;
     private int quantity;

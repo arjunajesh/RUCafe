@@ -9,13 +9,26 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+/**
+ * Class for MainController Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class MainController {
     @FXML
     private Label welcomeText;
 
+    /**
+     * Configures the starting layout of the screen
+     */
     public void initialize(){
 
     }
+
+    /**
+     * Displays to the user the donut-ordering screen when clicked
+     * Displays error message otherwise
+     */
     @FXML
     protected void displayDonutsScreen() {
         Stage donutScene = new Stage();
@@ -37,6 +50,11 @@ public class MainController {
         }
 
     }
+
+    /**
+     * Displays to the user the coffee-ordering screen when clicked
+     * Displays error message otherwise
+     */
     @FXML
     protected void displayCoffeeScreen(){
         Stage coffeeScene = new Stage();
@@ -56,6 +74,11 @@ public class MainController {
             alert.showAndWait();
         }
     }
+
+    /**
+     * Displays the ordering basket screen when clicked
+     * Displays error message otherwise
+     */
     @FXML
     protected void displayBasketScreen(){
         Stage basketScene = new Stage();
@@ -75,6 +98,11 @@ public class MainController {
             alert.showAndWait();
         }
     }
+
+    /**
+     * Displays the store orders screen when clicked
+     * Displays error message otherwise
+     */
     @FXML
     protected void displayOrderScreen(){
         Stage ordersScene = new Stage();

@@ -3,8 +3,11 @@ package com.example.rucafe;
 
 import java.text.DecimalFormat;
 
+/**
+ * Class for Donut Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class Donut extends MenuItem {
-
 
     private String type;
     private String flavor;
@@ -15,6 +18,12 @@ public class Donut extends MenuItem {
 
     private double price;
 
+    /**
+     * Constructor for Donut Class
+     * @param type type of donut
+     * @param quantity number of desired donuts
+     * @param flavor flavor of said donut
+     */
     public Donut(String type, int quantity, String flavor){
         this.type = type;
         this.quantity = quantity;
@@ -29,11 +38,17 @@ public class Donut extends MenuItem {
         }
     }
 
+    /**
+     * @return returns flavor and quantity formatted as a string
+     */
     @Override
     public String toString(){
         return flavor + "(" + quantity + ")";
     }
 
+    /**
+     * @return returns the calculated price of the order
+     */
     @Override
     public double calculatePrice(){
         return quantity * price;

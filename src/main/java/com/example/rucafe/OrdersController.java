@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/**
+ * Class for OrdersController Object
+ * @author Arjun Ajesh, Nathan Roh
+ */
 public class OrdersController {
 
     DecimalFormat df = new DecimalFormat("#.##");
@@ -27,6 +31,9 @@ public class OrdersController {
     @FXML
     private TextField totalAmount;
 
+    /**
+     * Configures the starting layout of the screen
+     */
     public void initialize(){
         cafeManager = RUCafeManager.getInstance();
         storeOrders = cafeManager.getStoreOrders();
@@ -34,6 +41,9 @@ public class OrdersController {
         updateOrderBox();
     }
 
+    /**
+     *
+     */
     public void updateOrderBox(){
         nums = FXCollections.observableArrayList();
         for(int i = 0; i < storeOrders.size(); i++){
@@ -61,6 +71,10 @@ public class OrdersController {
         totalAmount.setText("");
     }
 
+    /**
+     * Calls exportOrders in RUCafeManager to export the orders in the cafe manager
+     * @param e allows access to properties of ActionEvent
+     */
     public void exportOrders(ActionEvent e){
         try {
             cafeManager.exportOrders();
@@ -69,6 +83,10 @@ public class OrdersController {
 
         }
     }
+
+    /**
+     * Shows user an error if a required choice is not specified when adding/removing an item
+     */
     public void throwAlert(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("ERROR");
