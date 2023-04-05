@@ -107,6 +107,10 @@ public class DonutController {
      * Then updates the donut orders display and shown subtotal accordingly
      */
     public void removeDonut(){
+        if(donutDisplay.getSelectionModel().getSelectedIndex() == -1){
+            throwAlertRemove();
+            return;
+        }
         int index = donutDisplay.getSelectionModel().getSelectedIndex();
         donuts.remove(index);
         updateDonutList();
@@ -159,4 +163,11 @@ public class DonutController {
         alert.showAndWait();
     }
 
+    public void throwAlertRemove(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR");
+        alert.setHeaderText("No donut selected");
+        alert.setContentText("Must select a donut to remove");
+        alert.showAndWait();
+    }
 }

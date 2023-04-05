@@ -64,14 +64,12 @@ class RUCafeManager {
      */
     public void exportOrders() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("orders.txt"));
-        int count = 1;
         for (Order order: storeOrders){
-            writer.write("Order "  + count + "\n");
+            writer.write("Order "  + order.getOrderNumber() + "\n");
 
             for (MenuItem item: order.getOrderItems()){
                 writer.write(item.toString() + "\n");
             }
-            count++;
         }
         writer.write("\n");
         writer.close();

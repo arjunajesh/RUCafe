@@ -9,7 +9,8 @@ import java.util.ArrayList;
  * @author Arjun Ajesh, Nathan Roh
  */
 public class Order {
-    private static int orderNumber = 0;
+    private static int index = 0;
+    private int orderNumber;
     private ArrayList<MenuItem> orderItems = new ArrayList<>();
 
     private static final double TAX = 0.06625;
@@ -18,7 +19,8 @@ public class Order {
      *
      */
     public Order(){
-        orderNumber += 1;
+        index += 1;
+        this.orderNumber = index;
     }
 
     /**
@@ -71,6 +73,10 @@ public class Order {
      */
     public double getTotalAmount(){
         return getSubTotal() + getTax();
+    }
+
+    public int getOrderNumber(){
+        return orderNumber;
     }
 
 }
