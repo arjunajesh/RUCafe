@@ -1,5 +1,8 @@
 package com.example.rucafe;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 class RUCafeManager {
@@ -29,6 +32,21 @@ class RUCafeManager {
 
     public ArrayList<Order> getStoreOrders(){
         return storeOrders;
+    }
+
+    public void exportOrders() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("orders.txt"));
+        int count = 1;
+        for (Order order: storeOrders){
+            writer.write("Order "  + count + "\n");
+
+            for (MenuItem item: order.getOrderItems()){
+                writer.write(item.toString() + "\n");
+            }
+            count++;
+        }
+        writer.write("\n");
+        writer.close();
     }
 
 

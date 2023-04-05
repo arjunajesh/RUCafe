@@ -30,10 +30,11 @@ public class Order {
     }
     public double getTax(){
         double subTotal = getSubTotal();
-        return subTotal * 0.06625; /* MAGIC NUMBER, also i need to round these values */
+        return subTotal * 0.06625; /* MAGIC NUMBER*/
     }
 
     public double getTotalAmount(){
         return getSubTotal() + getTax();
     }
+
 }

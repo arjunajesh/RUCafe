@@ -3,6 +3,7 @@ package com.example.rucafe;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -39,6 +40,10 @@ public class BasketController {
     }
 
     public void removeSelectedItem(ActionEvent e){
+        if(basketView.getSelectionModel().getSelectedIndex() == -1){
+            throwAlert();
+            return;
+        }
         order.removeMenuItem(basketView.getSelectionModel().getSelectedIndex());
         basketView.setItems(FXCollections.observableArrayList(order.getOrderItems()));
         updatePaymentFields();
@@ -49,6 +54,13 @@ public class BasketController {
         order = cafeManager.getOrder();
         updatePaymentFields();
         basketView.setItems(FXCollections.observableArrayList(order.getOrderItems()));
+    }
+    public void throwAlert(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR");
+        alert.setHeaderText("No Item selected");
+        alert.setContentText("Must select an item to remove");
+        alert.showAndWait();
     }
 
 }

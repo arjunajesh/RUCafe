@@ -17,10 +17,10 @@
          <children>
             <ComboBox fx:id="orderBox" layoutX="55.0" layoutY="50.0" onAction="#changeSelectedOrder" prefWidth="150.0" />
             <Label layoutX="248.0" layoutY="50.0" text="Total Amount" />
-            <TextField fx:id="totalAmount" layoutX="332.0" layoutY="46.0" prefHeight="26.0" prefWidth="119.0" />
+            <TextField fx:id="totalAmount" editable="false" layoutX="332.0" layoutY="46.0" prefHeight="26.0" prefWidth="119.0" />
             <ListView fx:id="orderItems" layoutX="57.0" layoutY="96.0" prefHeight="200.0" prefWidth="400.0" />
             <Button layoutX="90.0" layoutY="331.0" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order" />
-            <Button layoutX="221.0" layoutY="332.0" mnemonicParsing="false" text="Export Orders" />
+            <Button layoutX="221.0" layoutY="332.0" mnemonicParsing="false" onAction="#exportOrders" text="Export Orders" />
          </children>
       </AnchorPane>
    </center>

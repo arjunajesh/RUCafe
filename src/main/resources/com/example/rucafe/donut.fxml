@@ -17,7 +17,7 @@
       <AnchorPane prefHeight="96.0" prefWidth="496.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="70.0" layoutY="44.0" text="Sub Total" />
-            <TextField fx:id="subTotal" layoutX="136.0" layoutY="39.0" />
+            <TextField fx:id="subTotal" editable="false" layoutX="136.0" layoutY="39.0" />
             <Button layoutX="339.0" layoutY="39.0" mnemonicParsing="false" onAction="#addDonutsToOrder" text="Add to Order" />
          </children>
       </AnchorPane>

@@ -3,11 +3,8 @@ package com.example.rucafe;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -71,6 +68,10 @@ public class DonutController {
     }
 
     public void addDonut(ActionEvent e){
+        if(flavorList.getSelectionModel().getSelectedIndex() == -1){
+            throwAlert();
+            return;
+        }
         int quantity =  numDonutBox.getSelectionModel().getSelectedIndex() + 1;
         String flavor = (String) flavorList.getSelectionModel().getSelectedItem();
         switch(donutBox.getSelectionModel().getSelectedItem()){
@@ -114,4 +115,13 @@ public class DonutController {
         updateDonutList();
         subTotal.clear();
     }
+
+    public void throwAlert(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR");
+        alert.setHeaderText("No flavor selected");
+        alert.setContentText("Must select a flavor for donut");
+        alert.showAndWait();
+    }
+
 }

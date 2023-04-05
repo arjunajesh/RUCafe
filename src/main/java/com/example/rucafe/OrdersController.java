@@ -4,10 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -48,10 +50,30 @@ public class OrdersController {
     }
 
     public void cancelOrder(ActionEvent e){
+        if(orderBox.getSelectionModel().getSelectedIndex() == -1) {
+            throwAlert();
+            return;
+        }
         System.out.println(orderBox.getSelectionModel().getSelectedIndex());
         storeOrders.remove(orderBox.getSelectionModel().getSelectedIndex());
         updateOrderBox();
         orderItems.setItems(FXCollections.observableArrayList());
         totalAmount.setText("");
+    }
+
+    public void exportOrders(ActionEvent e){
+        try {
+            cafeManager.exportOrders();
+        }
+        catch(IOException er){
+
+        }
+    }
+    public void throwAlert(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR");
+        alert.setHeaderText("Please select an order");
+        alert.setContentText("Must select an order to cancel");
+        alert.showAndWait();
     }
 }

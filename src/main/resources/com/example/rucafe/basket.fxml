@@ -29,9 +29,9 @@
                         <Label text="sub-total" />
                         <Label text="sales tax" GridPane.rowIndex="1" />
                         <Label text="total amount" GridPane.rowIndex="2" />
-                        <TextField fx:id="subTotalField" GridPane.columnIndex="1" />
-                        <TextField fx:id="taxField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="totalField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="subTotalField" editable="false" GridPane.columnIndex="1" />
+                        <TextField fx:id="taxField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="totalField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
