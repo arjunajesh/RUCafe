@@ -34,10 +34,12 @@ public class BasketController {
      * Configures the starting layout of the screen
      */
     public void initialize(){
+
         cafeManager = RUCafeManager.getInstance();
         order = cafeManager.getOrder();
         basketView.setItems(FXCollections.observableArrayList(order.getOrderItems()));
         updatePaymentFields();
+
     }
 
     /**

@@ -84,6 +84,7 @@ public class CoffeeController {
     }
     public void addToOrder(ActionEvent e){
         order.addMenuItem(coffee);
+        coffee = new Coffee("Short", 1);
         sweetCream.setSelected(false);
         irishCream.setSelected(false);
         frenchVanilla.setSelected(false);
@@ -91,8 +92,8 @@ public class CoffeeController {
         caramel.setSelected(false);
         coffeeBox.getSelectionModel().selectFirst();
         numCoffeeBox.getSelectionModel().selectFirst();
-        coffee = new Coffee("Short", 1);
         price.setText(df.format(coffee.calculatePrice()));
+
     }
 
 }
