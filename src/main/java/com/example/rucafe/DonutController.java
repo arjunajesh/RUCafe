@@ -5,9 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Class for DonutController Object
@@ -23,6 +26,9 @@ public class DonutController {
     private RUCafeManager cafeManager;
     private Order order;
 
+    Image yeastDonut;
+    Image cakeDonut;
+    Image donutHole;
 
     private ArrayList<Donut> donuts;
 
@@ -39,6 +45,9 @@ public class DonutController {
     @FXML
     private TextField subTotal;
 
+    @FXML
+    private ImageView donutImage;
+
     /**
      * Configures the starting layout of the screen
      */
@@ -50,6 +59,11 @@ public class DonutController {
         cakeFlavors = FXCollections.observableArrayList("Old Fashioned", "Chocolate", "Lemon");
         holeFlavors = FXCollections.observableArrayList("Glazed", "Plain", "Ice");
 
+        yeastDonut = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/rucafe/yeastdonut.jpg")));
+        cakeDonut = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/rucafe/cake.jpeg")));
+        donutHole = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/rucafe/donutholes.jpeg")));
+
+        donutImage.setImage(yeastDonut);
         flavorList.setItems(yeastFlavors);
 
         donutBox.setItems(donutsList);
@@ -70,10 +84,13 @@ public class DonutController {
         switch(donutBox.getSelectionModel().getSelectedItem()){
             case "Yeast":
                 flavorList.setItems(yeastFlavors);
+                donutImage.setImage(yeastDonut);
                 break;
             case "Cake": flavorList.setItems(cakeFlavors);
+                donutImage.setImage(cakeDonut);
                 break;
             case "Donut Holes": flavorList.setItems(holeFlavors);
+                donutImage.setImage(donutHole);
                 break;
         }
     }
